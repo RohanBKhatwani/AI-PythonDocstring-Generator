@@ -70,7 +70,7 @@ def get_docstrings_gpt(python_file):
                 if msg != "":
                     # Then there is code here
                     resp = query_chatgpt(msg)
-                    if not (('"""' not in resp) or ("'''" not in resp)):
+                    if not (('"""' in resp) or ("'''" in resp)):
                         resp = '"""' + resp + '"""'
                     docstrings.append(resp)
                 append = False
